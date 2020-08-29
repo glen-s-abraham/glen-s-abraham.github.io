@@ -1,0 +1,171 @@
+/*primary color #CE0000
+secondary color #928C8C
+black #010101
+white #FFFFFF
+font Maven pro*/
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Maven Pro',Arial;
+	font-size: 10px;
+}
+header{
+	position: fixed;
+	top:0;
+	width: 100vw;
+}
+
+.header{
+	width: 100%;
+	height: 4rem;
+	background-color: #010101;
+	position: relative;
+}
+.header__logo_container{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+
+}
+.header__logo_img{
+	height:3.6rem;
+}
+.navbar{
+	height: 2.4rem;
+	background-color: #928C8C;
+	position: relative;
+
+
+}
+.navbar__link_container{
+	
+    
+    list-style:none;
+    margin:0;
+    padding:0rem;
+    text-align:center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  	white-space: nowrap;
+    
+
+
+}
+.navbar__link_container::-webkit-scrollbar {
+    width: 0px;  
+    background-color:#010101; 
+    height: 1rem;
+}
+.navbar__link_container::-webkit-scrollbar-thumb {
+    background: #CE0000;
+
+}
+.navbar__link_list{
+	
+	display:inline;
+
+}
+.navbar__link{
+	text-decoration: none;
+	font-size: 1.6rem;
+	color: #010101;
+	display: inline-block;
+	padding:0 1.6rem;
+
+}
+.active{
+	color: #FFFFFF;
+	background-color: #CE0000;
+}
+.list{
+	
+	margin:8rem auto;
+	width: 90%;
+	display:grid;
+	grid-template-columns:auto auto auto;
+	grid-row-gap: 1.6rem;
+	grid-column-gap: 1.6rem;
+	
+
+}
+.card{
+	height: 24rem;
+	width: 24rem;
+	float: left;
+	border: 1px solid #101010;
+	
+}
+.card__image_container{
+	width: 100%;
+	height:70%;
+	background-color: grey;
+	object-fit: cover;
+}
+.card__image{
+	width:100%;
+	height: 100%;
+
+}
+.card__title_container{
+	text-align: justify;
+	width:98%;
+	height:8%;
+	overflow: hidden;
+	font-size: 0.8rem;
+}
+.card__descreption_container{
+	text-align: justify;
+	width:98%;
+	height:18%;
+	font-size:1.2rem; 
+	overflow: hidden;
+}
+.detailed{
+	
+	margin:8rem auto;
+	width: 90%;
+}
+.detailed__title_container{
+	width: 80%;
+	margin: auto;
+	font-size: 1.6rem;
+	text-align: center;
+}
+.detailed__image_container{
+	width: 80%;
+	background-color: grey;
+	height: 60vh;
+	margin:2rem  auto;
+
+}
+.detailed_image{
+	width: 100%;
+	height:100%;
+}
+.detailed_article_container{
+	width: 78%;
+	font-size: 1.6rem;
+	margin: auto;
+	text-align: justify;
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  background-color: #010101;
+  color: #FFFFFF;
+}
+.footer__container_logo{
+	height: 1.2rem;
+	padding:0 .8rem;
+}
