@@ -102,10 +102,12 @@ header{
 	
 }
 .card__image_container{
+
 	width: 100%;
 	height:70%;
 	background-color: grey;
 	object-fit: cover;
+
 }
 .card__image{
 	width:100%;
