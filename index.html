@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Join Maria's Mushroom Farm WhatsApp group for fresh mushrooms, real-time updates, and exclusive offers from a local family-run farm in Tripunithura." />
+  <title>Maria's Mushroom Farm</title>
+
+  <!-- Preload background image -->
+  <link rel="preload" href="img/bg2.png" as="image" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    .hero-section {
+      background: url('img/bg2.png') no-repeat center center;
+      background-size: cover;
+      background-position-y: 0px;
+      color: white;
+      padding: 6rem 1rem;
+      position: relative;
+      min-height: 99vh;
+      text-align: center;
+      overflow: hidden;
+      transition: background-position 0.1s ease-out;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 1s ease-out forwards;
+      will-change: opacity, transform;
+    }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .cta-btn {
+      background-color: #43a047;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-size: 1.125rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.2);
+    }
+
+    .cta-btn:hover {
+      background-color: #388e3c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(67, 160, 71, 0.35);
+    }
+
+    .brand-logo {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .features-section {
+      padding: 4rem 1rem;
+      background-color: #fff;
+    }
+
+    .features-section h2 {
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      font-size: 1.75rem;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: #4caf50;
+      margin-bottom: 1rem;
+      transition: transform 0.4s ease;
+    }
+
+    .feature-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .cta-section {
+      background-color: #e8f5e9;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero-section">
+    <div class="container hero-content">
+      <img src="img/logo2.png" alt="Maria's Mushroom Farm Logo" class="brand-logo img-fluid" />
+      <h1>Fresh From Our Farm to Your Kitchen</h1>
+      <p class="lead mt-3">
+        We’re a small family-run farm in Tripunithura growing fresh, chemical-free mushrooms — join our WhatsApp group
+        for harvest alerts, special offers, and to support local farming.
+      </p>
+      <a href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF" class="cta-btn" aria-label="Join our WhatsApp group">
+        📲 Join Our WhatsApp Group
+      </a>
+    </div>
+  </header>
+
+  <section class="features-section">
+    <div class="container text-center">
+      <h2 class="fade-in">Why Join Our WhatsApp Community?</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+          <h5>Locally Grown</h5>
+          <p>Farm-fresh mushrooms grown without chemicals or shortcuts.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-bell"></i></div>
+          <h5>Real-Time Updates</h5>
+          <p>Be the first to know when new harvests are available.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-tags"></i></div>
+          <h5>Exclusive Offers</h5>
+          <p>Access seasonal discounts and community-only deals.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h5>Support Local</h5>
+          <p>Help us grow by supporting sustainable family farming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section fade-in">
+    <div class="container">
+      <h2 class="mb-4">Still Thinking? 🍄</h2>
+      <p class="mb-4">Join our growing community of mushroom lovers and get closer to where your food comes from.</p>
+      <a href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF" class="cta-btn" aria-label="Join our WhatsApp group">
+        Join Our WhatsApp Group
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Maria's Mushroom Farm. All rights reserved.
+  </footer>
+
+  <script>
+    // Dynamic Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll-based Fade In
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Smooth Parallax using requestAnimationFrame
+    const hero = document.querySelector('.hero-section');
+    let lastScrollY = window.scrollY;
+
+    function updateParallax() {
+      const offset = lastScrollY * 0.4;
+      hero.style.backgroundPositionY = `${offset}px`;
+      requestAnimationFrame(updateParallax);
+    }
+
+    window.addEventListener('scroll', () => {
+      lastScrollY = window.scrollY;
+    });
+
+    requestAnimationFrame(updateParallax);
+  </script>
+
+</body>
+
+</html>
