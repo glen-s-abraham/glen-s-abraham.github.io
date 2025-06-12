@@ -1,624 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Join Maria's Mushroom Farm WhatsApp group for fresh mushrooms, real-time updates, and exclusive offers from a local family-run farm in Tripunithura."
-    />
-    <link rel="icon" type="image/png" href="img/icon.png" />
-    <title>Maria's Mushroom Farm</title>
 
-    <!-- Preload background image -->
-    <link rel="preload" href="img/bg2.jpeg" as="image" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Join Maria's Mushroom Farm WhatsApp group for fresh mushrooms, real-time updates, and exclusive offers from a local family-run farm in Tripunithura." />
+  <link rel="icon" type="image/png" href="img/icon.png" />
+  <title>Maria's Mushroom Farm</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
+  <!-- Preload background image -->
+  <link rel="preload" href="img/bg2.jpeg" as="image" />
 
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", sans-serif;
-        background-color: #f9f9f9;
-        scroll-behavior: smooth;
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: transparent;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    @media (hover: hover) {
+      .navbar-nav .nav-link:not(.active):hover {
+        color: #a5d6a7;
       }
+    }
 
-      .navbar {
-        background: transparent;
-      }
+    .nav-link:focus,
+    .nav-link:active {
+      color: white !important;
+      background-color: transparent !important;
+      outline: none !important;
+      box-shadow: none !important;
+      border-bottom: none !important;
+    }
 
-      .navbar-nav .nav-link {
-        color: white;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
+    .nav-link.active {
+      color: #a5d6a7 !important;
+      font-weight: bold;
+      border-bottom: 2px solid #a5d6a7;
+    }
 
-      @media (hover: hover) {
-        .navbar-nav .nav-link:not(.active):hover {
-          color: #a5d6a7;
-        }
-      }
+    .navbar.scrolled {
+      background-color: rgba(33, 33, 33, 0.95) !important;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-      .nav-link:focus,
-      .nav-link:active {
-        color: white !important;
-        background-color: transparent !important;
-        outline: none !important;
-        box-shadow: none !important;
-        border-bottom: none !important;
-      }
+    .hero-section {
+      background: url("img/bg2.jpeg") no-repeat center center;
+      background-size: cover;
+      background-position-y: 0px;
+      color: white;
+      padding: 6rem 1rem;
+      position: relative;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      transition: background-position 0.1s ease-out;
+    }
 
-      .nav-link.active {
-        color: #a5d6a7 !important;
-        font-weight: bold;
-        border-bottom: 2px solid #a5d6a7;
-      }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
 
-      .navbar.scrolled {
-        background-color: rgba(33, 33, 33, 0.95) !important;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 1s ease-out forwards;
+      will-change: opacity, transform;
+    }
 
-      .hero-section {
-        background: url("img/bg2.jpeg") no-repeat center center;
-        background-size: cover;
-        background-position-y: 0px;
-        color: white;
-        padding: 6rem 1rem;
-        position: relative;
-        min-height: 100vh;
-        text-align: center;
-        overflow: hidden;
-        transition: background-position 0.1s ease-out;
-      }
-
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 0;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeSlideUp 1s ease-out forwards;
-        will-change: opacity, transform;
-      }
-
-      @keyframes fadeSlideUp {
-        to {
-          opacity: 1;
-          transform: none;
-        }
-      }
-
-      .hero-content h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-
-      @media (min-width: 768px) {
-        .hero-content h1 {
-          font-size: 3rem;
-        }
-      }
-
-      .cta-btn {
-        background-color: #43a047;
-        color: white;
-        padding: 0.75rem 2rem;
-        font-size: 1.125rem;
-        border-radius: 30px;
-        text-decoration: none;
-        margin-top: 1.5rem;
-        display: inline-block;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(67, 160, 71, 0.2);
-      }
-
-      .cta-btn:hover {
-        background-color: #388e3c;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(67, 160, 71, 0.35);
-      }
-
-      .brand-logo {
-        max-width: 140px;
-        height: auto;
-        margin-bottom: 1.5rem;
-      }
-
-      .features-section {
-        padding: 4rem 1rem;
-        background-color: #fff;
-      }
-
-      .features-section h2 {
-        font-weight: 600;
-        margin-bottom: 2.5rem;
-        font-size: 1.75rem;
-      }
-
-      .feature-icon {
-        font-size: 2rem;
-        color: #4caf50;
-        margin-bottom: 1rem;
-        transition: transform 0.4s ease;
-      }
-
-      .feature-icon:hover {
-        transform: scale(1.2);
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-      }
-
-      .fade-in.visible {
+    @keyframes fadeSlideUp {
+      to {
         opacity: 1;
         transform: none;
       }
+    }
 
-      .section {
-        padding: 4rem 1rem;
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
       }
+    }
 
-      .section p {
-        font-size: 1.15rem;
-        line-height: 1.75;
-      }
+    .cta-btn {
+      background-color: #43a047;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-size: 1.125rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.2);
+    }
 
-      .cta-section {
-        background-color: #e8f5e9;
-        padding: 3rem 1rem;
-        text-align: center;
-      }
+    .cta-btn:hover {
+      background-color: #388e3c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(67, 160, 71, 0.35);
+    }
 
-      .cta-section h2 {
-        font-size: 1.75rem;
-        font-weight: 600;
-      }
+    .brand-logo {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
 
-      .order-step .feature-icon {
-        font-size: 2.2rem;
-        color: #43a047;
-        margin-bottom: 1rem;
-        transition: transform 0.3s ease;
-      }
+    .features-section {
+      padding: 4rem 1rem;
+      background-color: #fff;
+    }
 
-      .order-step .feature-icon:hover {
-        transform: scale(1.2);
-      }
+    .features-section h2 {
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      font-size: 1.75rem;
+    }
 
-      .order-step h5 {
-        font-weight: 600;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
+    .feature-icon {
+      font-size: 2rem;
+      color: #4caf50;
+      margin-bottom: 1rem;
+      transition: transform 0.4s ease;
+    }
 
-      .bg-light-green {
-        background-color: #f1f8e9;
-      }
+    .feature-icon:hover {
+      transform: scale(1.2);
+    }
 
-      .bg-white-doodle {
-        position: relative;
-        background-color: #fff;
-        z-index: 1;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .section {
+      padding: 4rem 1rem;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .section p {
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .cta-section {
+      background-color: #e8f5e9;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    .order-step .feature-icon {
+      font-size: 2.2rem;
+      color: #43a047;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .order-step .feature-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .order-step h5 {
+      font-weight: 600;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .bg-light-green {
+      background-color: #f1f8e9;
+    }
+
+    .bg-white-doodle {
+      position: relative;
+      background-color: #fff;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .bg-white-doodle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("img/doodle.png");
+      background-repeat: repeat;
+      background-position: center top;
+      background-size: contain;
+      opacity: 0.04;
+      z-index: 0;
+    }
+
+    .bg-white-doodle>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-nav {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
         overflow: hidden;
-      }
-      .bg-white-doodle::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("img/doodle.png");
-        background-repeat: repeat;
-        background-position: center top;
-        background-size: contain;
-        opacity: 0.04;
-        z-index: 0;
-      }
-      .bg-white-doodle > * {
-        position: relative;
-        z-index: 1;
+        white-space: nowrap;
+        justify-content: space-between;
+        padding: 0 0.25rem;
+        gap: 0;
       }
 
-      footer {
-        background: #333;
-        color: #fff;
+      .navbar-nav .nav-item {
+        flex: 1 1 auto;
         text-align: center;
-        padding: 1rem;
-        font-size: 0.9rem;
       }
 
-      @media (max-width: 991.98px) {
-        .navbar-nav {
-          flex-direction: row !important;
-          flex-wrap: nowrap !important;
-          overflow: hidden;
-          white-space: nowrap;
-          justify-content: space-between;
-          padding: 0 0.25rem;
-          gap: 0;
-        }
-
-        .navbar-nav .nav-item {
-          flex: 1 1 auto;
-          text-align: center;
-        }
-
-        .navbar-nav .nav-link {
-          font-size: 0.7rem;
-          padding: 0.2rem 0.3rem;
-          text-decoration: none !important;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      .navbar-nav .nav-link {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.3rem;
+        text-decoration: none !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+    }
 
-      .floating-whatsapp-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #43a047;
-        color: white;
-        padding: 0.75rem 1.25rem;
-        font-size: 1rem;
-        border-radius: 50px;
-        z-index: 1000;
-        text-decoration: none;
-        align-items: center;
-        box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        display: flex;
-      }
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #43a047;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      z-index: 1000;
+      text-decoration: none;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: flex;
+    }
 
-      .floating-whatsapp-btn.show {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
+    .floating-whatsapp-btn.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
 
-      .floating-whatsapp-btn i {
-        margin-right: 8px;
-      }
-    </style>
-  </head>
-
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#mainNav"
-    data-bs-offset="100"
-    tabindex="0"
-  >
-    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
-      <div class="container d-flex justify-content-center">
-        <!-- Hide brand completely on mobile -->
-        <a class="navbar-brand text-white d-none d-lg-block me-auto" href="#"
-          >Maria’s Mushroom Farm</a
-        >
-
-        <!-- Always show nav links (no toggle) -->
-        <ul class="navbar-nav flex-row flex-wrap justify-content-center">
-          <li class="nav-item px-2">
-            <a class="nav-link" href="#home">Home</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" href="#products">What We Grow</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" href="#order">How to Order</a>
-          </li>
-          <li class="nav-item px-2">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <header class="hero-section" id="home">
-      <div class="container hero-content">
-        <img
-          src="img/logo2.png"
-          alt="Maria's Mushroom Farm Logo"
-          class="brand-logo img-fluid"
-        />
-        <h1>Fresh From Our Farm to Your Kitchen</h1>
-        <p class="lead mt-3">
-          We’re a small family-run farm in Tripunithura growing fresh,
-          chemical-free mushrooms — join our WhatsApp group for harvest alerts,
-          special offers, and to support local farming.
-        </p>
-        <a
-          href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF"
-          class="cta-btn d-inline-flex align-items-center"
-          aria-label="Join our WhatsApp group"
-        >
-          <i class="fab fa-whatsapp fa-lg me-2" style="line-height: 1"></i>
-          Join Our WhatsApp Group
-        </a>
-      </div>
-    </header>
-
-    <section class="section features-section bg-white-doodle">
-      <div class="container text-center">
-        <h2 class="fade-in">Why Join Our WhatsApp Community?</h2>
-        <div class="row g-4">
-          <div class="col-sm-6 col-md-3 fade-in">
-            <div class="feature-icon"><i class="fas fa-seedling"></i></div>
-            <h5>Locally Grown</h5>
-            <p>Farm-fresh mushrooms grown without chemicals or shortcuts.</p>
-          </div>
-          <div class="col-sm-6 col-md-3 fade-in">
-            <div class="feature-icon"><i class="fas fa-bell"></i></div>
-            <h5>Real-Time Updates</h5>
-            <p>Be the first to know when new harvests are available.</p>
-          </div>
-          <div class="col-sm-6 col-md-3 fade-in">
-            <div class="feature-icon"><i class="fas fa-tags"></i></div>
-            <h5>Exclusive Offers</h5>
-            <p>Access seasonal discounts and community-only deals.</p>
-          </div>
-          <div class="col-sm-6 col-md-3 fade-in">
-            <div class="feature-icon">
-              <i class="fas fa-hand-holding-heart"></i>
-            </div>
-            <h5>Support Local</h5>
-            <p>Help us grow by supporting sustainable family farming.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section bg-light-green fade-in">
-      <div class="container">
-        <h2 class="text-center mb-4 fade-in">👨‍👩‍👧 About Us</h2>
-        <p class="text-center mx-auto fade-in" style="max-width: 750px">
-          What happens when a tech nerd and a biotech student get curious about
-          mushrooms? A mini mushroom farm, of course! 🧑‍🔬👩‍💻 We started this as a
-          fun little side project — and it quickly grew roots. Now, the whole
-          family’s in on it, helping out wherever needed — from farm setup to
-          delivery runs. We grow clean, chemical-free mushrooms right here in
-          Tripunithura using modern automation and a whole lot of care. And yes,
-          they’re harvested fresh and out the door the same day!
-        </p>
-      </div>
-    </section>
-
-    <section id="products" class="section bg-white-doodle fade-in">
-      <div class="container">
-        <h2 class="text-center mb-4 fade-in">🍄 What We Grow</h2>
-        <p class="text-center mx-auto fade-in" style="max-width: 750px">
-          Right now, we grow premium white oyster mushrooms — fresh, tender, and
-          harvested the very same day you get them. 🍄 Grown indoors in a clean,
-          climate-controlled setup with minimal human contact, our mushrooms are
-          as fresh as it gets. We're also working on bringing in exotic mushroom
-          varieties, microgreens, and sprouts soon — all grown with the same
-          care and zero chemicals.
-        </p>
-      </div>
-    </section>
-
-    <section id="order" class="section bg-light-green fade-in">
-      <div class="container">
-        <h2 class="text-center mb-5 fade-in">🛒 How to Order</h2>
-        <div class="row g-4 text-center">
-          <div class="col-md-4 fade-in">
-            <div class="order-step fade-in">
-              <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
-              <h5 class="fade-in">Step 1: Join Group</h5>
-              <p>
-                Click the WhatsApp button and join our group to get daily
-                availability updates.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 fade-in">
-            <div class="order-step fade-in">
-              <div class="feature-icon fade-in"><i class="fas fa-seedling"></i></div>
-              <h5 class="fade-in">Step 2: Check Availability</h5>
-              <p>
-                We post available harvest quantities early morning—respond
-                quickly to reserve yours.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 fade-in">
-            <div class="order-step fade-in">
-              <div class="feature-icon fade-in"><i class="fas fa-truck"></i></div>
-              <h5>Step 3: Get It Delivered</h5>
-              <p>
-                We deliver fresh mushrooms same-day in Tripunithura. Or choose
-                self-pickup from the farm.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section bg-white-doodle fade-in">
-      <div class="container">
-        <h2 class="text-center mb-4 fade-in">📍 Find Us & Connect</h2>
-        <p class="text-center fade-in">
-          We’re based in <strong>Tripunithura, Kochi</strong> — and you’re
-          always welcome to stop by.
-        </p>
-        <div class="mb-4 mx-auto" style="max-width: 600px">
-          <div class="ratio ratio-4x3">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.071133350075!2d76.35567089999999!3d9.928034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08730049c71733%3A0x5f69327f05f3222b!2sMaria&#39;s%20Mushroom%20Farm!5e0!3m2!1sen!2sin!4v1749699426965!5m2!1sen!2sin"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section bg-light-green fade-in">
-      <div class="container">
-        <h2 class="mb-4 fade-in">Still Thinking? 🍄</h2>
-        <p class="mb-4 fade-in">
-          Join our growing community of mushroom lovers and get closer to where
-          your food comes from.
-        </p>
-        <a
-          href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF"
-          class="cta-btn fade-in"
-          aria-label="Join our WhatsApp group"
-        >
-          Join Our WhatsApp Group
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      <div class="mb-2">
-        <i class="fab fa-instagram fa-lg me-3"></i>
-        <i class="fab fa-facebook fa-lg"></i>
-      </div>
-      &copy; <span id="year"></span> Maria's Mushroom Farm. All rights reserved.
-    </footer>
-    <a
-      href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF"
-      class="floating-whatsapp-btn"
-      id="floatingWhatsapp"
-      aria-label="Join our WhatsApp group"
-    >
-      <i class="fab fa-whatsapp fa-lg"></i> Join Now
-    </a>
-
-    <script>
-      const navbarLinks = document.querySelectorAll(".nav-link");
-      const sections = Array.from(navbarLinks).map((link) =>
-        document.querySelector(link.getAttribute("href"))
-      );
-
-      window.addEventListener("scroll", () => {
-        let fromTop = window.scrollY + 120;
-
-        navbarLinks.forEach((link) => link.classList.remove("active"));
-
-        for (let i = sections.length - 1; i >= 0; i--) {
-          if (sections[i] && sections[i].offsetTop <= fromTop) {
-            navbarLinks[i].classList.add("active");
-            break;
-          }
-        }
-      });
-    </script>
-
-    <script>
-      const navbar = document.querySelector(".navbar");
-      const heroSection = document.querySelector(".hero-section");
-
-      function updateNavbarBackground() {
-        const heroBottom = heroSection.offsetHeight;
-        if (window.scrollY > 8) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      }
-
-      window.addEventListener("scroll", updateNavbarBackground);
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      const faders = document.querySelectorAll(".fade-in");
-      const appearOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+    .floating-whatsapp-btn i {
+      margin-right: 8px;
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '722764453635523');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=722764453635523&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
 
-      const appearOnScroll = new IntersectionObserver(function (
-        entries,
-        observer
-      ) {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        });
-      },
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container d-flex justify-content-center">
+      <!-- Hide brand completely on mobile -->
+      <a class="navbar-brand text-white d-none d-lg-block me-auto" href="#">Maria’s Mushroom Farm</a>
+
+      <!-- Always show nav links (no toggle) -->
+      <ul class="navbar-nav flex-row flex-wrap justify-content-center">
+        <li class="nav-item px-2">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="#products">What We Grow</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="#order">How to Order</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-section" id="home">
+    <div class="container hero-content">
+      <img src="img/logo2.png" alt="Maria's Mushroom Farm Logo" class="brand-logo img-fluid" />
+      <h1>Fresh From Our Farm to Your Kitchen</h1>
+      <p class="lead mt-3">
+        We’re a small family-run farm in Tripunithura growing fresh,
+        chemical-free mushrooms — join our WhatsApp group for harvest alerts,
+        special offers, and to support local farming.
+      </p>
+      <a href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF" class="cta-btn d-inline-flex align-items-center"
+        aria-label="Join our WhatsApp group">
+        <i class="fab fa-whatsapp fa-lg me-2" style="line-height: 1"></i>
+        Join Our WhatsApp Group
+      </a>
+    </div>
+  </header>
+
+  <section class="section features-section bg-white-doodle">
+    <div class="container text-center">
+      <h2 class="fade-in">Why Join Our WhatsApp Community?</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+          <h5>Locally Grown</h5>
+          <p>Farm-fresh mushrooms grown without chemicals or shortcuts.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-bell"></i></div>
+          <h5>Real-Time Updates</h5>
+          <p>Be the first to know when new harvests are available.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon"><i class="fas fa-tags"></i></div>
+          <h5>Exclusive Offers</h5>
+          <p>Access seasonal discounts and community-only deals.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h5>Support Local</h5>
+          <p>Help us grow by supporting sustainable family farming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section bg-light-green fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4 fade-in">👨‍👩‍👧 About Us</h2>
+      <p class="text-center mx-auto fade-in" style="max-width: 750px">
+        What happens when a tech nerd and a biotech student get curious about
+        mushrooms? A mini mushroom farm, of course! 🧑‍🔬👩‍💻 We started this as a
+        fun little side project — and it quickly grew roots. Now, the whole
+        family’s in on it, helping out wherever needed — from farm setup to
+        delivery runs. We grow clean, chemical-free mushrooms right here in
+        Tripunithura using modern automation and a whole lot of care. And yes,
+        they’re harvested fresh and out the door the same day!
+      </p>
+    </div>
+  </section>
+
+  <section id="products" class="section bg-white-doodle fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4 fade-in">🍄 What We Grow</h2>
+      <p class="text-center mx-auto fade-in" style="max-width: 750px">
+        Right now, we grow premium white oyster mushrooms — fresh, tender, and
+        harvested the very same day you get them. 🍄 Grown indoors in a clean,
+        climate-controlled setup with minimal human contact, our mushrooms are
+        as fresh as it gets. We're also working on bringing in exotic mushroom
+        varieties, microgreens, and sprouts soon — all grown with the same
+        care and zero chemicals.
+      </p>
+    </div>
+  </section>
+
+  <section id="order" class="section bg-light-green fade-in">
+    <div class="container">
+      <h2 class="text-center mb-5 fade-in">🛒 How to Order</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-4 fade-in">
+          <div class="order-step fade-in">
+            <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+            <h5 class="fade-in">Step 1: Join Group</h5>
+            <p>
+              Click the WhatsApp button and join our group to get daily
+              availability updates.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in">
+          <div class="order-step fade-in">
+            <div class="feature-icon fade-in"><i class="fas fa-seedling"></i></div>
+            <h5 class="fade-in">Step 2: Check Availability</h5>
+            <p>
+              We post available harvest quantities early morning—respond
+              quickly to reserve yours.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in">
+          <div class="order-step fade-in">
+            <div class="feature-icon fade-in"><i class="fas fa-truck"></i></div>
+            <h5>Step 3: Get It Delivered</h5>
+            <p>
+              We deliver fresh mushrooms same-day in Tripunithura. Or choose
+              self-pickup from the farm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section bg-white-doodle fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4 fade-in">📍 Find Us & Connect</h2>
+      <p class="text-center fade-in">
+        We’re based in <strong>Tripunithura, Kochi</strong> — and you’re
+        always welcome to stop by.
+      </p>
+      <div class="mb-4 mx-auto" style="max-width: 600px">
+        <div class="ratio ratio-4x3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.071133350075!2d76.35567089999999!3d9.928034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08730049c71733%3A0x5f69327f05f3222b!2sMaria&#39;s%20Mushroom%20Farm!5e0!3m2!1sen!2sin!4v1749699426965!5m2!1sen!2sin"
+            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section bg-light-green fade-in">
+    <div class="container">
+      <h2 class="mb-4 fade-in">Still Thinking? 🍄</h2>
+      <p class="mb-4 fade-in">
+        Join our growing community of mushroom lovers and get closer to where
+        your food comes from.
+      </p>
+      <a href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF" class="cta-btn fade-in"
+        aria-label="Join our WhatsApp group">
+        Join Our WhatsApp Group
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="mb-2">
+      <i class="fab fa-instagram fa-lg me-3"></i>
+      <i class="fab fa-facebook fa-lg"></i>
+    </div>
+    &copy; <span id="year"></span> Maria's Mushroom Farm. All rights reserved.
+  </footer>
+  <a href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF" class="floating-whatsapp-btn" id="floatingWhatsapp"
+    aria-label="Join our WhatsApp group">
+    <i class="fab fa-whatsapp fa-lg"></i> Join Now
+  </a>
+
+  <script>
+    const navbarLinks = document.querySelectorAll(".nav-link");
+    const sections = Array.from(navbarLinks).map((link) =>
+      document.querySelector(link.getAttribute("href"))
+    );
+
+    window.addEventListener("scroll", () => {
+      let fromTop = window.scrollY + 120;
+
+      navbarLinks.forEach((link) => link.classList.remove("active"));
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i] && sections[i].offsetTop <= fromTop) {
+          navbarLinks[i].classList.add("active");
+          break;
+        }
+      }
+    });
+  </script>
+
+  <script>
+    const navbar = document.querySelector(".navbar");
+    const heroSection = document.querySelector(".hero-section");
+
+    function updateNavbarBackground() {
+      const heroBottom = heroSection.offsetHeight;
+      if (window.scrollY > 8) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", updateNavbarBackground);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (
+      entries,
+      observer
+    ) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
       appearOptions);
 
-      faders.forEach((fader) => {
-        appearOnScroll.observe(fader);
-      });
+    faders.forEach((fader) => {
+      appearOnScroll.observe(fader);
+    });
 
-      const hero = document.querySelector(".hero-section");
-      let lastScrollY = window.scrollY;
+    const hero = document.querySelector(".hero-section");
+    let lastScrollY = window.scrollY;
 
-      function updateParallax() {
-        const offset = lastScrollY * 0.4;
-        hero.style.backgroundPositionY = `${offset}px`;
-        requestAnimationFrame(updateParallax);
-      }
-
-      window.addEventListener("scroll", () => {
-        lastScrollY = window.scrollY;
-      });
-
+    function updateParallax() {
+      const offset = lastScrollY * 0.4;
+      hero.style.backgroundPositionY = `${offset}px`;
       requestAnimationFrame(updateParallax);
-    </script>
-    <script>
-      const floatingBtn = document.getElementById("floatingWhatsapp");
-      const heroSec = document.querySelector(".hero-section");
-      const allSections = document.querySelectorAll(".section");
-      const secondLastSection = allSections[allSections.length - 1];
+    }
 
-      function toggleFloatingBtn() {
-        const scrollY = window.scrollY;
-        const heroBottom = heroSec.offsetTop + heroSec.offsetHeight;
-        const secondLastTop = secondLastSection.offsetTop;
+    window.addEventListener("scroll", () => {
+      lastScrollY = window.scrollY;
+    });
 
-        if (scrollY > heroBottom && scrollY < secondLastTop - 50) {
-          floatingBtn.classList.add("show");
-        } else {
-          floatingBtn.classList.remove("show");
-        }
+    requestAnimationFrame(updateParallax);
+  </script>
+  <script>
+    const floatingBtn = document.getElementById("floatingWhatsapp");
+    const heroSec = document.querySelector(".hero-section");
+    const allSections = document.querySelectorAll(".section");
+    const secondLastSection = allSections[allSections.length - 1];
+
+    function toggleFloatingBtn() {
+      const scrollY = window.scrollY;
+      const heroBottom = heroSec.offsetTop + heroSec.offsetHeight;
+      const secondLastTop = secondLastSection.offsetTop;
+
+      if (scrollY > heroBottom && scrollY < secondLastTop - 50) {
+        floatingBtn.classList.add("show");
+      } else {
+        floatingBtn.classList.remove("show");
       }
+    }
 
-      window.addEventListener("scroll", toggleFloatingBtn);
-    </script>
+    window.addEventListener("scroll", toggleFloatingBtn);
+  </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
