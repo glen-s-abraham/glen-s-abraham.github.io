@@ -42,8 +42,10 @@
         transition: color 0.3s ease;
       }
 
-      .navbar-nav .nav-link:hover {
-        color: #a5d6a7;
+      @media (hover: hover) {
+        .navbar-nav .nav-link:not(.active):hover {
+          color: #a5d6a7;
+        }
       }
 
       .nav-link:focus,
@@ -251,10 +253,6 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-        }
-
-        .navbar-nav .nav-link:hover {
-          color: white;
         }
       }
     </style>
