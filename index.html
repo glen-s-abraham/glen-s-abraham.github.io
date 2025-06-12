@@ -307,10 +307,11 @@
         </p>
         <a
           href="https://chat.whatsapp.com/IrIlz4BlyGg200YOcvKlQF"
-          class="cta-btn"
+          class="cta-btn d-inline-flex align-items-center"
           aria-label="Join our WhatsApp group"
         >
-          📲 Join Our WhatsApp Group
+          <i class="fab fa-whatsapp fa-lg me-2" style="line-height: 1"></i>
+          Join Our WhatsApp Group
         </a>
       </div>
     </header>
@@ -486,7 +487,7 @@
 
       function updateNavbarBackground() {
         const heroBottom = heroSection.offsetHeight;
-        if (window.scrollY > heroBottom - 100) {
+        if (window.scrollY > 8) {
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
