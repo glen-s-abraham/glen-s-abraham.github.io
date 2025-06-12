@@ -222,6 +222,31 @@
         background-color: #f1f8e9;
       }
 
+      .bg-white-doodle {
+        position: relative;
+        background-color: #fff;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .bg-white-doodle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("img/doodle.png");
+        background-repeat: repeat;
+        background-position: center top;
+        background-size: contain;
+        opacity: 0.04;
+        z-index: 0;
+      }
+      .bg-white-doodle > * {
+        position: relative;
+        z-index: 1;
+      }
+
       footer {
         background: #333;
         color: #fff;
@@ -346,7 +371,7 @@
       </div>
     </header>
 
-    <section class="section features-section bg-white">
+    <section class="section features-section bg-white-doodle">
       <div class="container text-center">
         <h2 class="fade-in">Why Join Our WhatsApp Community?</h2>
         <div class="row g-4">
@@ -391,7 +416,7 @@
       </div>
     </section>
 
-    <section id="products" class="section bg-white fade-in">
+    <section id="products" class="section bg-white-doodle fade-in">
       <div class="container">
         <h2 class="text-center mb-4">🍄 What We Grow</h2>
         <p class="text-center mx-auto" style="max-width: 750px">
@@ -443,7 +468,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section bg-white fade-in">
+    <section id="contact" class="section bg-white-doodle fade-in">
       <div class="container">
         <h2 class="text-center mb-4">📍 Find Us & Connect</h2>
         <p class="text-center">
