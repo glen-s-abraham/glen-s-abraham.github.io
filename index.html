@@ -7,7 +7,7 @@
       name="description"
       content="Join Maria's Mushroom Farm WhatsApp group for fresh mushrooms, real-time updates, and exclusive offers from a local family-run farm in Tripunithura."
     />
-     <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="icon" type="image/png" href="img/icon.png" />
     <title>Maria's Mushroom Farm</title>
 
     <!-- Preload background image -->
@@ -236,11 +236,22 @@
           text-overflow: ellipsis;
         }
       }
+
+      .nav-link.active {
+        color: #a5d6a7 !important;
+        font-weight: bold;
+        border-bottom: 2px solid #a5d6a7;
+      }
     </style>
   </head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNav"
+    data-bs-offset="100"
+    tabindex="0"
+  >
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
       <div class="container d-flex justify-content-center">
         <!-- Hide brand completely on mobile -->
         <a class="navbar-brand text-white d-none d-lg-block me-auto" href="#"
