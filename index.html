@@ -104,6 +104,26 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
+    .nav-cta {
+      background-color: #43a047 !important;
+      color: white !important;
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(67, 160, 71, 0.3);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-cta:hover, .nav-cta:focus {
+      background-color: #388e3c !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(67, 160, 71, 0.4);
+      color: white !important;
+      text-decoration: none;
+    }
+
     .hero-section {
       background: url("img/bg2.jpeg") no-repeat center center;
       background-size: cover;
@@ -316,6 +336,14 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      .nav-cta {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem !important;
+        border-radius: 12px;
+        box-shadow: none;
+        white-space: nowrap;
+      }
     }
 
     .floating-whatsapp-btn {
@@ -376,21 +404,24 @@
       <a class="navbar-brand text-white d-none d-lg-block me-auto" href="#">Maria’s Mushroom Farm</a>
 
       <!-- Always show nav links (no toggle) -->
-      <ul class="navbar-nav flex-row flex-wrap justify-content-center">
-        <li class="nav-item px-2">
+      <ul class="navbar-nav flex-row flex-wrap justify-content-center align-items-center">
+        <li class="nav-item px-1 px-lg-2">
           <a class="nav-link" href="#home">Home</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-1 px-lg-2">
           <a class="nav-link" href="#about">About</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-1 px-lg-2">
           <a class="nav-link" href="#products">What We Grow</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-1 px-lg-2">
           <a class="nav-link" href="#order">How to Order</a>
         </li>
-        <li class="nav-item px-2">
+        <li class="nav-item px-1 px-lg-2">
           <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item px-1 px-lg-2">
+          <a class="nav-cta" href="https://recipes.mariasorganics.in/" target="_blank">Recipes</a>
         </li>
       </ul>
     </div>
