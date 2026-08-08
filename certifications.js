@@ -59,6 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
                   canvas.style.maxWidth = "100%";
                   canvas.style.height = "auto";
                   
+                  // Prevent interactions to stop saving as image
+                  canvas.style.pointerEvents = "none";
+                  canvas.style.userSelect = "none";
+                  canvas.style.webkitUserSelect = "none";
+                  canvas.style.touchAction = "none";
+                  canvas.setAttribute("draggable", false);
+                  
+                  // Disable right-click / long press directly as fallback
+                  canvas.addEventListener('contextmenu', e => e.preventDefault());
+                  
                   const context = canvas.getContext('2d');
                   canvas.height = viewport.height;
                   canvas.width = viewport.width;
