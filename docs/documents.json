@@ -1,0 +1,26 @@
+[
+  {
+    "title": "FSSAI Registration Certificate",
+    "description": "Food Safety and Standards Authority of India Registration for Maria's Mushroom Farm",
+    "file": "docs/FSSAI Registration.pdf",
+    "mimeType": "application/pdf"
+  },
+  {
+    "title": "Legal Metrology Registration",
+    "description": "Government of Kerala Certificate of Registration as Manufacturer / Packer",
+    "file": "docs/LMOMS Licence.pdf",
+    "mimeType": "application/pdf"
+  },
+  {
+    "title": "Eco-Green Quality Test Report",
+    "description": "Comprehensive laboratory test report for chemical residues and biological contaminants",
+    "file": "docs/FR4850-MARIAS MUSHROOM Quality Test.pdf",
+    "mimeType": "application/pdf"
+  },
+  {
+    "title": "Mushroom Cultivation Certification",
+    "description": "Certificate of Completion for Mushroom Cultivation Business course by IID",
+    "file": "docs/Mushroom Course completion GLEN.pdf",
+    "mimeType": "application/pdf"
+  }
+]
