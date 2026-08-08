@@ -18,9 +18,27 @@
     "mimeType": "application/pdf"
   },
   {
+    "title": "HACCP for Food Manufacturing (Level 3)",
+    "description": "Highfield Level 3 Award in HACCP for Food Manufacturing - Liya Sunny Abraham",
+    "file": "docs/Liya HACCP.pdf",
+    "mimeType": "application/pdf"
+  },
+  {
     "title": "Mushroom Cultivation Certification",
-    "description": "Certificate of Completion for Mushroom Cultivation Business course by IID",
+    "description": "Certificate of Completion for Mushroom Cultivation Business course by IID - Glen S Abraham",
     "file": "docs/Mushroom Course completion GLEN.pdf",
+    "mimeType": "application/pdf"
+  },
+  {
+    "title": "Mushroom Farming For Beginners",
+    "description": "Certificate of Participation by Manorama Horizon - Liya Sunny",
+    "file": "docs/Liya mushroom.pdf",
+    "mimeType": "application/pdf"
+  },
+  {
+    "title": "VFPCK Training Certificate",
+    "description": "Vegetable and Fruit Promotion Council Keralam Training on Homestead Vegetable Cultivation - Sunny Vadathu Abraham",
+    "file": "docs/Sunny VFPCK.pdf",
     "mimeType": "application/pdf"
   }
 ]
